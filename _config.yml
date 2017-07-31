@@ -43,3 +43,5 @@ noita:
       - name: Repository
         url: https://github.com/penibelst/jekyll-noita
 class: small button
+
+theme: jekyll-theme-slate
