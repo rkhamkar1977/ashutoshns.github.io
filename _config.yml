@@ -1,5 +1,11 @@
 #General Jekyll Config
 
+highlighter: rogue
 name: Ashutosh Sharma
+discription: My Portfolio
+url: "ashutoshns.github.io"
+lsi: false
 
+#Build Settings
+permalink: pretty
 theme: jekyll-theme-slate
