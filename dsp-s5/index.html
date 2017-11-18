@@ -37,7 +37,7 @@
 			
 			<div class="section">
 				<div class="heading">Abstract</div>
-				<div class="text">
+				<div class="text container">
 
 					<!-- Start edit here  -->
 					The goal of this project is to build an audio classifier capable of recognising different sounds. The sounds we have used are ambient noises from an urban environment. Right now we have focused on 4 categories of sounds. This can prove to be a very effective tool for audio surviellance of the sorrounding. It's applications can vary from as simple as making a device to detect a dog's bark to as big as detection of gun shots/bombing or other terrorist activities. We tried plotting different types of spectrograms of samples from each class which inturn lead us to see what filters would be best suited for this classification. In the end we used Mel-frequency cepstral coefficients, Mel-scaled power spectrogram, Chromagram of a short-time Fourier transform, Octave-based spectral contrast, Tonnetz to extract features. The coeffecients from these filters led to 193 features which were then used for classification using Machine Learning.					
@@ -48,7 +48,7 @@
 			
 			<div class="section">
 				<div class="heading">1. Introduction</div>
-				<div class="text">
+				<div class="text container">
 
 					<!-- Start edit here  -->
 					As mentioned, the goal of this project is to build an audio classifier capable of recognising different sounds that are heard in our environment. In this section, I would introduce you to the problem statement and the try to explain the challenges it posed, then present some litreature survey that we did and lastly explaining the approach that we decieded to take for solving this problem.
@@ -58,7 +58,7 @@
 
 				<div class="subsection">
 					<div class="headingss">1.1 Introduction to Problem</div>
-					<div class="text">
+					<div class="text container">
 
 						<!-- Start edit here  -->
 						The crux of the problem is this: given a never-before-heard recording, how can a system be trained to identify what it is actually listening to?</div>
@@ -73,7 +73,7 @@
 
 				<div class="subsection">
 					<div class="headingss">1.2 Figure</div>
-					<div class="image">
+					<div class="image container">
 
 						<!-- Start edit here  -->
 						<div style="width: 70%; float: left;">
@@ -82,13 +82,13 @@
 								Fig. 1: An overview block diagram of the project.
 							</p>
 						</div>
-						<div style="width:50%; float:left">
+						<div style="width:35%; float:left">
 							<p>&nbsp;&nbsp;
 								<img src="img/fig2.jpg" alt="Amplitude vs. Time plot for sample files from all 4 categories." style="width:95%; height:auto; align:center;">
 								Fig 2: Amplitude vs. Time plot for sample files from all 4 categories.
 							</p>
 						</div>
-						<div style="width:50%; float:left">
+						<div style="width:35%; float:left">
 							<p>&nbsp;&nbsp;
 								<img src="img/fig3.jpg" alt="Spectrogram of sample files from all 4 categories." style="width:95%; height:auto; align:center;">
 								Fig 3: Spectrogram of sample files from all 4 categories.
