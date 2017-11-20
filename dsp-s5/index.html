@@ -125,8 +125,46 @@
 
 					</div>
 				</div>
+			</div>
+				
+			<div class="section">
+				<div class="heading">1. Proposed Approach</div>
+				<div class="text container">
+
+					<!-- Start edit here  -->
+					In this section we explain the proposed approach of the enitre project in detail. Part 1.1 about exploration is not quite a part of 'how we solve this problem' but a very integral part of 'how we decide how to solve this problem' so we decide to include it.
+					<!-- Stop edit here -->
+
+				</div>
+				
+				
 				<div class="subsection">
-					<div class="headingss">1.5 Feature extraction </div>
+					<div class="headingss">1.1 Exploratory</div>
+					<div class="text">
+					Once in memory, a common visualisation for audio recordings is the waveform plot, which depicts the amplitude (relative loudness) of the sound at each successive time interval, this is what you'll see if you load an audio file into a sound editor like Audacity. Here are the waveforms for a randomly chosen example of each of the dataset’s 4 classes:
+					</div>
+				</div>
+				<div style="width:45%; float:left">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="img/fig2.jpg" alt="Amplitude vs. Time plot for sample files from all 4 categories." style="width:90%; height:auto; align:center;">
+						Fig 2: Amplitude vs. Time plot for sample files from all four categories.
+					</p>
+				</div>
+				<div class="text">
+					In these plots, time is on the horizontal axis and amplitude on the vertical. We can see that some of the samples, like a dog barking, have a shape that is distinctively different from the others, which our classifier might be able to utilise to distinguish between them. Others like air-conditioning and engine idling are superficially more similar, and might be more difficult to tell apart - even for a human listener.
+				</div>
+				<div class="text">
+					Matplotlib provides an alternative visualisation method called spectrogram that calculates and plots the different intensities of the frequency spectrum. This creates a different depiction of each sound:
+				</div>
+				<div style="width:45%; float:left">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="img/fig3.jpg" alt="Spectrogram of sample files from all 4 categories." style="width:90%; height:auto; align:center;">
+						Fig 3: Spectrogram of sample files from all four categories.
+					</p>
+				</div>
+				
+				<div class="subsection">
+					<div class="headingss">1.2 Feature extraction </div>
 					<div class="text container">
 
 						The classification model will be fed with features extracted from our audio dataset, based on which it will be trained to make a decision.All of the audio clips collected have different sampling rates. The librosa library that we used uniformly samples the clips at a frequency of 22KHz. This means that in the time domain, each second of each audio clip input has 22,000 data points. We cannot directly feed this data to train our model, because there may be many redundant features here which will harm our model's accuracy.
