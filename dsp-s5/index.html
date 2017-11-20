@@ -139,15 +139,21 @@
 				
 				
 				<div class="subsection">
-					<div class="headingss">1.1 Exploratory</div>
+					<div class="headingss">2.1 Exploratory</div>
 					<div class="text">
 					Once in memory, a common visualisation for audio recordings is the waveform plot, which depicts the amplitude (relative loudness) of the sound at each successive time interval, this is what you'll see if you load an audio file into a sound editor like Audacity. Here are the waveforms for a randomly chosen example of each of the dataset’s 4 classes:
 					</div>
 				</div>
-				<div style="width:45%; float:center">
+				<div style="width:45%; float:left">
 					<p>&nbsp;&nbsp;&nbsp;&nbsp;
 						<img src="img/fig2.jpg" alt="Amplitude vs. Time plot for sample files from all 4 categories." style="width:90%; height:auto; align:center;">
 						Fig 2: Amplitude vs. Time plot for sample files from all four categories.
+					</p>
+				</div>
+				<div style="width:45%; float:left">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="img/fig3.jpg" alt="Spectrogram of sample files from all 4 categories." style="width:90%; height:auto; align:center;">
+						Fig 3: Spectrogram of sample files from all four categories.
 					</p>
 				</div>
 				<div class="text" style="clear: center">
@@ -156,12 +162,7 @@
 				<div class="text">
 					Matplotlib provides an alternative visualisation method called spectrogram that calculates and plots the different intensities of the frequency spectrum. This creates a different depiction of each sound:
 				</div>
-				<div style="width:45%; float:center">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="img/fig3.jpg" alt="Spectrogram of sample files from all 4 categories." style="width:90%; height:auto; align:center;">
-						Fig 3: Spectrogram of sample files from all four categories.
-					</p>
-				</div>
+				
 				<div class="text" style="clear: center">
 					Visually, it seems slightly easier to distinguish between the different classes with this visualisation, and indeed the intensities of frequencies will be the basis of the features I intend to extract. The notebook contains a variation of this visualisation using Librosa’s log power spectrogram plotting.
 				</div>
@@ -276,9 +277,16 @@
 						<img src="img/play.wav_ton.png" alt="image of a feature" width="100%" align="middle"/>
 					</p>
 				</div>
+				<div class="text">
+					These plots illustrate the complexity of the data we need to process. In typical supervised learning projects, every example in the training set has the same features, providing comparable values. But this is not the case with media such as audio or images, because any two files will not contain a pair of values that are semantically equivalent. Even if two audio samples had the same size, we can’t meaningfully compare the respective value at an arbitrary point in time. It would be like an image classifier trying to distinguish between two photos by comparing the pixels found in each at the same arbitrary location.
+				</div>
+				<div class="text">
+					Consequently, in audio processing we can not consider each data value in isolation, and can not determine what is signal and what is noise merely by looking at the quantiles of a frequency distribution. Instead, the salient information is the patterns of values, spread over wide regions of the recording. This means we must consider how the signal changes over time, and what patterns can be identified. How this can be achieved will be discussed in section 2.3.
+				</div>
+				
 				
 				<div class="subsection">
-					<div class="headingss">1.2 Feature extraction </div>
+					<div class="headingss">2.2 Feature extraction </div>
 					<div class="text container">
 
 						The classification model will be fed with features extracted from our audio dataset, based on which it will be trained to make a decision.All of the audio clips collected have different sampling rates. The librosa library that we used uniformly samples the clips at a frequency of 22KHz. This means that in the time domain, each second of each audio clip input has 22,000 data points. We cannot directly feed this data to train our model, because there may be many redundant features here which will harm our model's accuracy.
@@ -296,6 +304,27 @@
 
 					</div>
 				</div>
+	
+				<div class="subsection">
+					<div class="headingss">2.3 Training</div>
+					<div class="text">
+						<!--Text here-->
+						Code Run:
+						 <iframe src="train.html" height="50%" width="90%"></iframe> 
+						
+						
+					</div>
+				</div>
+	
+				<div class="subsection">
+					<div class="headingss">2.4 Prediction</div>
+					<div class="text">
+						<!--Text here-->
+						Code Run:
+						 <iframe src="predict.html" height="50%" width="90%"></iframe> 
+					</div>
+				</div>
+				
 			</div>
 
 			<div class="section">
@@ -318,6 +347,22 @@
 						Write something here.
 						<!-- Stop edit here -->
 
+					</div>
+					
+					<div class="subsection">
+						<div class="headingss">3.2.1 Results</div>
+						<div class="text">
+							<!--Text here-->
+						</div>
+					</div>
+					
+					<div class="subsection">
+						<div class="headingss">3.2.2 Optimization</div>
+						<div class="text">
+							<!--Text here-->
+							Code Run:
+						 	<iframe src="optimizer.html" height="50%" width="90%"></iframe> 
+						</div>
 					</div>
 				</div>
 			</div>
