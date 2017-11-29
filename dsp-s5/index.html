@@ -308,9 +308,13 @@
 							<li>    Take the discrete cosine transform of the list of mel log powers, as if it were a signal.
 							<li>    The MFCCs are the amplitudes of the resulting spectrum.
 							</ul>
+							<img src="img/mfcc.jpg" width="400px" align="center"></img>
+						
 						</div>
-
-						<img src="img/mfcc.jpg" width="400px" align="center"></img>
+						<li>Short term fourier transform is a very effective and generic tool that can be used to analyze a signal. In normal Fourier Tranform we take the entire time domain representation of a signal and observe its frequency domain representation. This tells us what frequency components are present in the signal. But in practical cases we often get signals that are largely varying over time. For such signals, we not only need to understand what frequency componenets are present in the signla, but how these frequency components are distributed over time for effective analysis. Thus we essentially need a mapping in frequency as well as time domain. In such a situation we break down the signal into small overlapping time frames, using a window function. By varying the window width we can ensure that the signal isnt varying heavily within it. Then we take a finite point fourier transform for the data points in these time frames. Thus, we get fourier domain representations for short durations of time.
+				 		The frame wise fourier transform that we obtain is then used to derive the signal intensity as a function of frequency and time. But, rather than plotting it on a linear frequency scale as we do in a normal spectrogram, we use a logarithmic frequency scale where the frequencies increase at an order of 2. Further, two consecutive frequencies separated by an order of two are further divided into 12 frequency bins and the intensity is then plotted for each bin. This frequency scale is known as the chroma scale and the resultant spectrogram that we plot is known as the chromagram. in our feature extraction we derived the stft-based chroma features for each audio clip and then then we take a mean of all the chroma features along the time axis and we get a resultant numpy array of 12 chroma features describing each audio file. 
+						<img src="img/stft.jpg" width="400px" align="center"></img>
+					        <img src="img/stft1.jpg" width="400px" align="center"></img>
 						
 					<li><a href="https://en.wikipedia.org/wiki/Mel_scale">Mel-scaled</a> power spectrogram - the Mel Scale is used to provide greater resolution for more informative (lower) frequencies</li>
 					<li></a href="https://labrosa.ee.columbia.edu/matlab/chroma-ansyn/">Chromagram</a> of a short-time Fourier transform - projects into bins representing the 12 distinct semitones (or chroma) of the musical octave</li>
