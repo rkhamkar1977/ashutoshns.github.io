@@ -140,7 +140,18 @@
 					<li><a href="https://sites.google.com/site/tonalintervalspace/">Tonnetz</a> - estimates tonal centroids as coordinates in a six-dimensional interval space</li>
 					</ul>
 					The results of these 5 feature extractions are concatenated to give us a 193-dimensional vector for each audio clip irrespective of its length.</div>
-					<div class="text container">These featues were extracted using the librosa library in python and were stored as numpy arrays. These arrays were then separately used to train our Feed-Forward Neural Network(FFN) model to classify the audio.</div>
+					<div class="subsubsection">
+						<div class="headingss">Chromagram of Short time fourier transform</div>
+						<div class="text container">
+							Short term fourier transform is a very effective and generic tool that can be used to analyze a signal. In normal Fourier
+							Tranform we take the entire time domain representation of a signal and observe its frequency domain representation. This tells us
+							what frequency components are present in the signal. But in practical cases we often get signals that are largely varying over time. For
+							such signals, we not only need to understand what frequency componenets are present in the signla, but how these frequency components are 
+							distributed over time for effective analysis. Thus we essentially need a mapping in frequency as well as time domain. In such a situation we break down the signal 
+							into small overlapping time frames, using a window function. By varying the window width we can ensure that the signal isnt varying heavily within it.
+							Then we take a finite point fourier transform for the data points in these time frames. Thus, we get fourier domain representations for short durations
+							of time.
+							
 
 					</div>
 				</div>
